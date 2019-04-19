@@ -190,7 +190,7 @@ clear
 
 # Variables
 echo "Setting up variables..."
-devlink=`curl -s https://api.github.com/repos/Deviantcoin/Source/releases/latest | grep browser_download_url | grep deviant-4.0.0-x86_64-linux-gnu.tar.gz`
+devlink=`curl -s https://api.github.com/repos/Deviantcoin/Source/releases/latest | grep browser_download_url | grep x86_64-linux-gnu | cut -d '"' -f 4`
 rpcuser=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo '')
 rpcpassword=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32 ; echo '')
 echo "Repo: $devlink"
