@@ -1,10 +1,11 @@
 #!/bin/bash
 # Download latest node and install.
-devlink=`curl -s https://api.github.com/repos/Deviantcoin/Source/releases/latest | grep browser_download_url | grep x86_64-linux-gnu | cut -d '"' -f 4`
+devlink=`curl -s https://api.github.com/repos/Deviantcoin/Source/releases/latest | grep browser_download_url | grep deviant-4.0.0-x86_64-linux-gnu.tar.gz
+`
 mkdir -p /tmp/deviant
 cd /tmp/deviant
-curl -Lo deviant.tar.gz $devlink
-tar -xzf deviant.tar.gz
+curl -Lo deviant-4.0.0-x86_64-linux-gnu.tar.gz $devlink
+tar -xzf deviant-4.0.0-x86_64-linux-gnu.tar.gz
 sudo mv ./bin/* /usr/local/bin
 cd
 rm -rf /tmp/deviant
