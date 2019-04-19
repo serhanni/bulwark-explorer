@@ -1,6 +1,6 @@
 #!/bin/bash
 # Download latest node and install.
-devlink=`curl -s https://api.github.com/repos/Deviantcoin/Source/releases/latest | grep browser_download_url | grep linux64 | cut -d '"' -f 4`
+devlink=`curl -s https://api.github.com/repos/Deviantcoin/Source/releases/latest | grep browser_download_url | grep x86_64-linux-gnu | cut -d '"' -f 4`
 mkdir -p /tmp/deviant
 cd /tmp/deviant
 curl -Lo deviant.tar.gz $devlink
